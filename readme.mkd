@@ -1,16 +1,12 @@
-# ref gene
+# ref-gene
 
 ref-gene is a vim-ref source for Vim.
 
 This plugin depends on some following softwares.
 
-  o GENE95辞書 (require)
-  o vim-ref    (require)
-  o unite.vim  (optional)
-
-( GENE95辞書 : http://www.namazu.org/~tsuchiya/sdic/data/gene.html )
-( vim-ref : https://github.com/thinca/vim-ref )
-( unite.vim : https://github.com/Shougo/unite.vim )
+* [GENE95辞書](http://www.namazu.org/~tsuchiya/sdic/data/gene.html) (require)
+* [vim-ref](https://github.com/thinca/vim-ref)    (require)
+* [unite.vim](https://github.com/Shougo/unite.vim)  (optional)
 
 
 
@@ -66,7 +62,7 @@ refer to dicwin-vim ( https://github.com/koron/dicwin-vim ) for using under utf-
 ## Variables
 
 
-**`g:ref_gene_dict_path`** : path to gene.txt.
+**`g:ref_gene_dict_path`** specifies the path to `gene.txt`.
 
 If `g:ref_gene_dict_path` is not specified, ref-gene looks for `gene.txt` in `&rtp/dict/`.
 
