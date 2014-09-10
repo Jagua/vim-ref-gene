@@ -1,0 +1,73 @@
+# ref gene
+
+ref-gene is a vim-ref source for Vim.
+
+This plugin depends on some following softwares.
+
+  o GENE95辞書 (require)
+  o vim-ref    (require)
+  o unite.vim  (optional)
+
+( GENE95辞書 : http://www.namazu.org/~tsuchiya/sdic/data/gene.html )
+( vim-ref : https://github.com/thinca/vim-ref )
+( unite.vim : https://github.com/Shougo/unite.vim )
+
+
+
+## Installation
+
+If you use NeoBundle, you write the following settings to your .vimrc.
+
+```vim
+        NeoBundle 'Jagua/vim-ref-gene', {
+        \         'depends' : 'thinca/vim-ref',
+        \         'commands' : 'Ref',
+        \ }
+        let g:ref_gene_dict_path = '~/.vim/dict/gene.txt'
+        nnoremap ,eg :<C-u>Ref gene<Space>
+```
+
+set the path of gene.txt to `g:ref_gene_dict_path`.
+
+refer to dicwin-vim ( https://github.com/koron/dicwin-vim ) for using under utf-8.
+
+
+
+## Advanced Setting
+
+
+```vim
+
+        NeoBundle 'osyo-manga/vim-automatic', {
+        \         'depends' : 'osyo-manga/vim-gift',
+        \ }
+        let g:automatic_config = [
+        \   {
+        \     'match' : {
+        \       'filetype' : 'ref-gene',
+        \       'autocmds' : [ 'FileType' ],
+        \     },
+        \     'set' : { 'height' : 2 },
+        \   },
+        \ ]
+
+        NeoBundleLazy 'Jagua/vim-ref-gene', {
+        \             'depends' : 'thinca/vim-ref',
+        \             'commands' : 'Ref',
+        \ }
+        if neobundle#tap('vim-ref-gene') "{{{
+          let g:ref_gene_dict_path = '~/.vim/dict/gene.txt'
+          nnoremap ,eg :<C-u>Ref gene<Space>
+          nnoremap <silent> frg :<C-u>Unite ref/gene -start-insert -default-action=split -create -auto-preview -default-action=preview -no-quit -keep-focus<CR>
+        endif
+```
+
+
+## Variables
+
+
+**`g:ref_gene_dict_path`** : path to gene.txt.
+
+If `g:ref_gene_dict_path` is not specified, ref-gene looks for `gene.txt` in `&rtp/dict/`.
+
+
