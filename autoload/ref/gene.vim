@@ -44,7 +44,12 @@ endfunction
 
 function! s:source.complete(query)
   if a:query == '' | return [] | endif
-  return filter(copy(s:genetxt), '!match(v:val, "'.a:query. '")')
+  let m = filter(copy(s:genetxt), '!match(v:val, "' . a:query . '")')
+  if m != []
+    let i = index(m, a:query)
+    let m = [m[i]] + (i > 0 ? m[ : i - 1] : []) + m[i + 1 : ]
+  endif
+  return m
 endfunction
 
 
