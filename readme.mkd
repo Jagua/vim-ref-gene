@@ -25,7 +25,7 @@ If you use NeoBundle, you write the following settings to your .vimrc.
 
 set the path of gene.txt to `g:ref_gene_dict_path`.
 
-refer to dicwin-vim ( https://github.com/koron/dicwin-vim ) for using under utf-8.
+refer to [dicwin-vim](https://github.com/koron/dicwin-vim) for using under utf-8.
 
 
 
