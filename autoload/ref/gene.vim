@@ -68,7 +68,7 @@ function! s:action.func(candidate)
 endfunction
 
 
-call unite#custom#action('ref', 'preview', s:action)
+call unite#custom#action('source/ref/gene/ref', 'preview', s:action)
 "}}}
 
 
